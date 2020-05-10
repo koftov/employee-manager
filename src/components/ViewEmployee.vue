@@ -4,12 +4,21 @@
       <li class="collection-header">
         <h4>{{name}}</h4>
       </li>
-      <li class="collection-item">Employee ID#:{{employee_id}}</li>
+      <li class="collection-item">Employee ID#: {{employee_id}}</li>
       <li class="collection-item">Department: {{dept}}</li>
       <li class="collection-item">Position: {{position}}</li>
     </ul>
     <router-link to="/" class="btn gray">Back</router-link>
     <button to="/" @click="deleteEmployee" class="btn red">Delete</button>
+
+    <div class="fixed-action-btn">
+      <router-link
+        v-bind:to="{name: 'edit-employee', params: {employee_id: employee_id}}"
+        class="btn-floating btn-large red"
+      >
+        <i class="fa fa-pencil"></i>
+      </router-link>
+    </div>
   </div>
 </template>
 
